@@ -1,0 +1,28 @@
+/* dependencies */
+@import "@fortawesome/fontawesome-free/css/all.css"; 
+@import "~bootstrap/scss/bootstrap";
+
+
+/* local imports */
+@import "./styles/variables";
+@import "./styles/fonts";
+@import "./styles/base";
+
+
+.containerFilms{
+        flex-wrap: wrap;
+        
+}
+.img{
+    height: 300px;
+    width: 220px;
+    border: 5px solid white;
+    border-radius: 8px;
+    margin:1%;
+}
+.imgColorer{
+   
+    background-color: rgb(83, 88, 187);
+    
+
+}
