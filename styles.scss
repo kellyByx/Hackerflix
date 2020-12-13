@@ -33,9 +33,11 @@ margin-top: 1%;
 .popUp{
     position: fixed;
     margin: 0;
-    padding: 0;
+    padding: 5%;
+    top:20%;
+    left:20%;
     width: 60vw;
-    height: 75vh;
+    height: 50vh;
     background: white;
     border: 1px solid aqua;
 }

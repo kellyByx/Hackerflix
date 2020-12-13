@@ -23,7 +23,7 @@ function popUpInfos() {
   // délégation d'évenement : on click sur les img de films = affiche popUp d'infos
   document.body.addEventListener('click', (e) => {
     if (e.target.matches('.img')) {
-      console.log(e.target);
+      // console.log(e.target);
 
       let popUpInfosFilm = '';
       movies.forEach((element) => {
@@ -37,7 +37,7 @@ function popUpInfos() {
             <p> Note: ${element.note}</p>
             <p> Plot: </br> ${element.plot} </p>
           </div> `;
-          console.log(popUpInfosFilm);
+          // console.log(popUpInfosFilm);
           app.innerHTML += popUpInfosFilm;
         }/* else {
           console.log(" rater.. fait un meilleur code !'");
