@@ -29,15 +29,14 @@ function popUpInfos() {
       movies.forEach((element) => {
         if (e.target === element.img) {
           popUpInfosFilm += `
-    <div id="popUpInfos" class="popUp">
-      <i class="far fa-times-circle"></i>
-      <h3> Title: ${element.title}</h3>
-      <p> Genres: </br> ${element.genres} </p>
-      <p> Year: ${element.year}</p>
-      <p> Note: ${element.note}</p>
-      <p> Plot: </br> ${element.plot} </p>
-     </div>
-  `;
+          <div id="popUpInfos" class="popUp">
+            <i class="far fa-times-circle"></i>
+            <h3> Title: ${element.title}</h3>
+            <p> Genres: </br> ${element.genres} </p>
+            <p> Year: ${element.year}</p>
+            <p> Note: ${element.note}</p>
+            <p> Plot: </br> ${element.plot} </p>
+          </div> `;
           console.log(popUpInfosFilm);
           app.innerHTML += popUpInfosFilm;
         }
