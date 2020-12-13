@@ -13,7 +13,7 @@ for (let i = 0; i < movies.length; i++) {
    `;
   } else {
     moviesContainer += `
-    <img class="img imgColorer">
+    <img class="img imgColorer"  id="${movies[i].imdb}">
     `;
   }
 }
