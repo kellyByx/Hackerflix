@@ -9,7 +9,7 @@ moviesContainer += '<button> Recent Film Only </button> </br>';
 for (let i = 0; i < movies.length; i++) {
   if (movies[i].img) {
     moviesContainer += `  
-    <img src='posters/${movies[i].imdb}.jpg' class= "img" alt="afficheFilmHacking">
+    <img src='posters/${movies[i].imdb}.jpg' class="img"  id="${movies[i].imdb}" alt="afficheFilmHacking">
    `;
   } else {
     moviesContainer += `
@@ -27,7 +27,7 @@ function popUpInfos() {
 
       let popUpInfosFilm = '';
       movies.forEach((element) => {
-        if (e.target === element.img) {
+        if (e.target === element.imdb) {
           popUpInfosFilm += `
           <div id="popUpInfos" class="popUp">
             <i class="far fa-times-circle"></i>
@@ -39,6 +39,8 @@ function popUpInfos() {
           </div> `;
           console.log(popUpInfosFilm);
           app.innerHTML += popUpInfosFilm;
+        } else {
+          console.log(" rater.. fait une meilleur code !'");
         }
       });
     }
