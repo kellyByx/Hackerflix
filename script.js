@@ -12,47 +12,50 @@ for (let i = 0; i < movies.length; i++) {
     <img src='posters/${movies[i].imdb}.jpg' class="img"  id="${movies[i].imdb}" alt="afficheFilmHacking">
    `;
   } else {
-    moviesContainer += `
-    <img class="img imgColorer"  id="${movies[i].imdb}">
-    `;
+    moviesContainer += `<img class="img imgColorer"  id="${movies[i].imdb}">`;
+    // moviesContainer += `<div class="img imgColorer divImg"  id="${movies[i].imdb}">
+    // <h4>${movies[i].title}</h4></div`;
   }
 }
 moviesContainer += '</section>';
 
-function popUpInfos() {
-  // délégation d'évenement : on click sur les img de films = affiche popUp d'infos
-  document.body.addEventListener('click', (e) => {
-    if (e.target.matches('.img')) {
-      // console.log(e.target);
+// délégation d'évenement : on click sur les img de films = affiche popUp d'infos
+document.body.addEventListener('click', (e) => {
+  if (e.target.matches('.img')) {
+    // console.log(e.target);
 
-      let popUpInfosFilm = '';
-      movies.forEach((element) => {
-        if (e.target.id === element.imdb) {
-          popUpInfosFilm += `
+    let popUpInfosFilm = '';
+    movies.forEach((element) => {
+      if (e.target.id === element.imdb) {
+        popUpInfosFilm += `
           <div id="popUpInfos" class="popUp">
             <i class="far fa-times-circle"></i>
             <h3> Title: ${element.title}</h3>
             <p> Genres: </br> ${element.genres} </p>
             <p> Year: ${element.year}</p>
-            <p> Note: ${element.note}</p>
+            <p> Note: ${element.note} /10</p>
             <p> Plot: </br> ${element.plot} </p>
           </div> `;
-          // console.log(popUpInfosFilm);
-          app.innerHTML += popUpInfosFilm;
-        }/* else {
+        // console.log(popUpInfosFilm);
+        app.innerHTML += popUpInfosFilm;
+      }/* else {
           console.log(" rater.. fait un meilleur code !'");
         } */
+      // délégation d'évenement : on click sur les icone croix pour fermer la popUp
+      document.body.addEventListener('click', (el) => {
+        if (el.target.matches('.fa-times-circle')) {
+          popUpInfos.remove();
+        }
       });
-    }
-  });
-}
-popUpInfos();
+    });
+  }
+});
 app.innerHTML += moviesContainer;
 
-// délégation d'évenement : on click sur les icone croix pour fermer la popUp
-/* document.body.addEventListener('click', (e) => {
+/* // délégation d'évenement : on click sur les icone croix pour fermer la popUp
+document.body.addEventListener('click', (e) => {
   if (e.target.matches('.fa-times-circle')) {
-    // remove sur ???
+    popUpInfosFilm.remove();
   }
 }); */
 
