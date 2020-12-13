@@ -13,6 +13,10 @@
         flex-wrap: wrap;
         
 }
+h1{
+color: white;
+margin-top: 1%;
+}
 .img{
     height: 300px;
     width: 220px;
@@ -24,5 +28,14 @@
    
     background-color: rgb(83, 88, 187);
     
+}
 
+.popUp{
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    width: 60vw;
+    height: 75vh;
+    background: white;
+    border: 1px solid aqua;
 }
