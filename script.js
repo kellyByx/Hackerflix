@@ -18,38 +18,44 @@ for (let i = 0; i < movies.length; i++) {
   }
 }
 moviesContainer += '</section>';
-// création de popup au click des poster pour voir les infos du film cliquer:
+
 function popUpInfos() {
+  // délégation d'évenement : on click sur les img de films = affiche popUp d'infos
+  document.body.addEventListener('click', (e) => {
+    if (e.target.matches('.img')) {
+      console.log(e.target);
+    }
+  });
+  // création de popup au click des poster pour voir les infos du film cliquer:
   let popUpInfosFilm = '';
-  for (let j = 0; j < movies.length; j++) {
-    popUpInfosFilm += `
+  movies.forEach((element) => {
+    if (e.target === element.img) {
+      popUpInfosFilm += `
     <div id="popUpInfos" class="popUp">
       <i class="far fa-times-circle"></i>
-      <h3> Title: ${movies[j].title}</h3>
-      <p> Genres: </br> ${movies[j].genres} </p>
-      <p> Year: ${movies[j].year}</p>
-      <p> Note: ${movies[j].note}</p>
-      <p> Plot: </br> ${movies[j].plot} </p>
+      <h3> Title: ${element.title}</h3>
+      <p> Genres: </br> ${element.genres} </p>
+      <p> Year: ${element.year}</p>
+      <p> Note: ${element.note}</p>
+      <p> Plot: </br> ${element.plot} </p>
      </div>
   `;
-    app.innerHTML += popUpInfosFilm;
-  }
+      console.log(popUpInfosFilm);
+      app.innerHTML += popUpInfosFilm;
+    }
+  });
 }
-// délégation d'évenement : on click sur les img de films = affiche popUp d'infos
-document.body.addEventListener('click', (e) => {
-  if (e.target.matches('.img')) {
-    popUpInfos();
-  }
-});
+popUpInfos();
+app.innerHTML += moviesContainer;
+
 // délégation d'évenement : on click sur les icone croix pour fermer la popUp
 /* document.body.addEventListener('click', (e) => {
   if (e.target.matches('.fa-times-circle')) {
     // remove sur ???
   }
 }); */
-// ajout dans le html:
-app.innerHTML += moviesContainer;
 
+// ------------------ Ancien code test ---------------------
 /* Ancienne version mais plus lisible de faire avec un variable vide au depart
 function popUpInfos() {
   let popUpInfosFilm = '<div id="popUpInfos" class="popUp">';
@@ -65,3 +71,32 @@ function popUpInfos() {
     popUpInfosFilm = '</div>';
   }
 } */
+
+/* premier test function:
+ function popUpInfos() {
+  let popUpInfosFilm = '';
+  for (let j = 0; j < movies.length; j++) {
+    if (movies[j].img) {
+      popUpInfosFilm += `
+    <div id="popUpInfos" class="popUp">
+      <i class="far fa-times-circle"></i>
+      <h3> Title: ${movies[j].title}</h3>
+      <p> Genres: </br> ${movies[j].genres} </p>
+      <p> Year: ${movies[j].year}</p>
+      <p> Note: ${movies[j].note}</p>
+      <p> Plot: </br> ${movies[j].plot} </p>
+     </div>
+  `;
+      console.log(popUpInfosFilm);
+      app.innerHTML += popUpInfosFilm;
+    }
+  }
+}
+// délégation d'évenement : on click sur les img de films = affiche popUp d'infos
+document.body.addEventListener('click', (e) => {
+  if (e.target.matches('.img')) {
+    console.log(e.target);
+    popUpInfos();
+  }
+});
+*/
