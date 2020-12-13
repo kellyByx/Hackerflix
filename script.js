@@ -40,7 +40,7 @@ function popUpInfos() {
           console.log(popUpInfosFilm);
           app.innerHTML += popUpInfosFilm;
         } else {
-          console.log(" rater.. fait une meilleur code !'");
+          console.log(" rater.. fait un meilleur code !'");
         }
       });
     }
