@@ -33,6 +33,16 @@ margin-top: 1%;
     display: block;
 }
 
+.fondPopUp{
+   position: fixed;
+   top:0;
+   left:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(83, 88, 187, 0.598);
+    
+    
+}
 .popUp{
     position: fixed;
     margin: 0;
@@ -42,5 +52,14 @@ margin-top: 1%;
     width: 60vw;
     height: 50vh;
     background: white;
-    border: 1px solid aqua;
+    border: 5px solid palevioletred;
+    border-radius: 12px;
+     text-align: left;
+    h3{
+        text-align: center;
+    }
+    i{
+        font-size: 20px;
+       color:palevioletred;
+    }
 }

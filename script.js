@@ -28,6 +28,7 @@ document.body.addEventListener('click', (e) => {
     movies.forEach((element) => {
       if (e.target.id === element.imdb) {
         popUpInfosFilm += `
+        <div class="fondPopUp">
           <div id="popUpInfos" class="popUp">
             <i class="far fa-times-circle"></i>
             <h3> Title: ${element.title}</h3>
@@ -35,19 +36,22 @@ document.body.addEventListener('click', (e) => {
             <p> Year: ${element.year}</p>
             <p> Note: ${element.note} /10</p>
             <p> Plot: </br> ${element.plot} </p>
+            </div>
           </div> `;
         // console.log(popUpInfosFilm);
         app.innerHTML += popUpInfosFilm;
       }/* else {
           console.log(" rater.. fait un meilleur code !'");
         } */
-      // délégation d'évenement : on click sur les icone croix pour fermer la popUp
-      document.body.addEventListener('click', (el) => {
-        if (el.target.matches('.fa-times-circle')) {
-          popUpInfos.remove();
-        }
-      });
     });
+  }
+});
+// délégation d'évenement : on click sur les icone croix pour fermer la popUp
+document.body.addEventListener('click', (el) => {
+  if (el.target.matches('.fa-times-circle')) {
+    // popUpInfosFilm.remove();
+    const popupInfoToRemove = document.querySelector('.fondPopUp');
+    popupInfoToRemove.remove();
   }
 });
 app.innerHTML += moviesContainer;
