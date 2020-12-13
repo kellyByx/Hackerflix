@@ -24,13 +24,11 @@ function popUpInfos() {
   document.body.addEventListener('click', (e) => {
     if (e.target.matches('.img')) {
       console.log(e.target);
-    }
-  });
-  // création de popup au click des poster pour voir les infos du film cliquer:
-  let popUpInfosFilm = '';
-  movies.forEach((element) => {
-    if (e.target === element.img) {
-      popUpInfosFilm += `
+
+      let popUpInfosFilm = '';
+      movies.forEach((element) => {
+        if (e.target === element.img) {
+          popUpInfosFilm += `
     <div id="popUpInfos" class="popUp">
       <i class="far fa-times-circle"></i>
       <h3> Title: ${element.title}</h3>
@@ -40,8 +38,10 @@ function popUpInfos() {
       <p> Plot: </br> ${element.plot} </p>
      </div>
   `;
-      console.log(popUpInfosFilm);
-      app.innerHTML += popUpInfosFilm;
+          console.log(popUpInfosFilm);
+          app.innerHTML += popUpInfosFilm;
+        }
+      });
     }
   });
 }
