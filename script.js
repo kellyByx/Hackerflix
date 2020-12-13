@@ -27,7 +27,7 @@ function popUpInfos() {
 
       let popUpInfosFilm = '';
       movies.forEach((element) => {
-        if (e.target === element.imdb) {
+        if (e.target.id === element.imdb) {
           popUpInfosFilm += `
           <div id="popUpInfos" class="popUp">
             <i class="far fa-times-circle"></i>
@@ -39,9 +39,9 @@ function popUpInfos() {
           </div> `;
           console.log(popUpInfosFilm);
           app.innerHTML += popUpInfosFilm;
-        } else {
+        }/* else {
           console.log(" rater.. fait un meilleur code !'");
-        }
+        } */
       });
     }
   });
