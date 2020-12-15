@@ -69,7 +69,7 @@ document.body.addEventListener('click', (elem) => {
 }); */
 
 // si reclic remet all :
-// test 1: avec vérification target
+// test 1: avec vérification target=> fonctionne nickel avec la popup
 document.body.addEventListener('click', (elem) => {
   if (elem.target.matches('.recent')) {
     console.log(elem.target); // = ok
@@ -88,7 +88,7 @@ document.body.addEventListener('click', (elem) => {
     });
   }
 });
-// --- version ou le nom bouton change nom = problème avec la popup--------
+// --- version ou le nom bouton change nom = !!! problème avec la popup--------
 /*
 // test 2 : changement du boutton au click
 const buttonRecent = document.getElementById('recent');
